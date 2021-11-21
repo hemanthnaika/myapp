@@ -6,11 +6,11 @@ import Product from './components/Product'
 import Order from './components/Order'
 import MyOrders from './components/MyOrder'
 import AdminPage from './components/AdminPage'
-
-
+import Navbar from './layout/Navbar'
 const App = () => {
   return (
     <div>
+      <Navbar/>
       <Home />
       <Login />
       <Signup />
