@@ -11,7 +11,7 @@ import jwt from 'jsonwebtoken'
             payload: { token }
         }
     } else {
-        window.alert("INCORRECT CREDS")
+   
         return {
             type: "LOGIN_FAILED",
             payload: { token: null }

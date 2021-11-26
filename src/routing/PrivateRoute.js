@@ -4,7 +4,7 @@ import { Navigate } from "react-router";
 
 const PrivateRoute = ({ child }) => {
     const { token } = useSelector(state => state.auth)
-    
+    //! Change the  Direct if the user have token
     return token === null ? child : <Navigate to='/' />
 }
 
