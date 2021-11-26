@@ -9,15 +9,14 @@ const authReducer = (state = initialState, action) => {
       case "LOGIN_SUCCESS":
         //   return payload
         return{
-            ...state,
-        auth:payload
+            
+        ...payload
         }
         
 
       case "LOGIN_FAILED":
           return {
-            ...state,
-            auth:payload
+            ...payload
           }
       case "LOGOUT":
           return {
