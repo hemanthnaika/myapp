@@ -24,8 +24,10 @@ import {
 } from '@chakra-ui/icons';
 
 import { Link as lee } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 // !Change the Name into Navbar
 export default function Navbar() {
+    const {token}=useSelector(state=>state.auth)
     const { isOpen, onToggle } = useDisclosure();
 
     return (
@@ -59,33 +61,34 @@ export default function Navbar() {
                     </Flex>
                 </Flex>
 
+            {token ? null:
                 <Stack
-                    flex={{ base: 1, md: 0 }}
-                    justify={'flex-end'}
-                    direction={'row'}
-                    spacing={6}>
-                    <Button
-                        as={lee}
-                        fontSize={'sm'}
-                        fontWeight={400}
-                        variant={'link'}
-                        to={'/login'}>
-                        Sign In
-                    </Button>
-                    <Button
-                        as={lee}
-                        display={{ base: 'none', md: 'inline-flex' }}
-                        fontSize={'sm'}
-                        fontWeight={600}
-                        color={'white'}
-                        bg={'blue.400'}
-                        to={'/signup'}
-                        _hover={{
-                            bg: 'blue.300',
-                        }}>
-                        Sign Up
-                    </Button>
-                </Stack>
+                flex={{ base: 1, md: 0 }}
+                justify={'flex-end'}
+                direction={'row'}
+                spacing={6}>
+                <Button
+                    as={lee}
+                    fontSize={'sm'}
+                    fontWeight={400}
+                    variant={'link'}
+                    to={'/login'}>
+                    Sign In
+                </Button>
+                <Button
+                    as={lee}
+                    display={{ base: 'none', md: 'inline-flex' }}
+                    fontSize={'sm'}
+                    fontWeight={600}
+                    color={'white'}
+                    bg={'blue.400'}
+                    to={'/signup'}
+                    _hover={{
+                        bg: 'blue.300',
+                    }}>
+                    Sign Up
+                </Button>
+            </Stack>}
             </Flex>
 
             <Collapse in={isOpen} animateOpacity>

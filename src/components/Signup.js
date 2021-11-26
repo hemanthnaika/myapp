@@ -30,6 +30,7 @@ import {
     console.log({  
        email,firstName,lastName,password 
       })
+      // ! If not in localStorage add empty array
       const users=JSON.parse(localStorage.getItem('users')) ?? []
       localStorage.setItem('users',JSON.stringify([...users,{email,firstName,lastName,password}]))
   }
