@@ -12,8 +12,14 @@ import {
     Text,
     useColorModeValue,
   } from '@chakra-ui/react';
-  
+  import { useState } from 'react';
   export default function Login() {
+      const [email,setEmail]=useState('')
+const[password,setPassword]=useState('')
+const handleLogin=()=>{
+    console.log({email,password})
+}
+
     return (
       <Flex
         minH={'100vh'}
@@ -35,11 +41,11 @@ import {
             <Stack spacing={4}>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input onChange={e=>(setEmail (e.target.value))} type="email" />
               </FormControl>
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
-                <Input type="password" />
+                <Input  onChange={e=>(setPassword (e.target.value))} type="password" />
               </FormControl>
               <Stack spacing={10}>
                 <Stack
@@ -49,7 +55,7 @@ import {
                   <Checkbox>Remember me</Checkbox>
                   <Link color={'blue.400'}>Forgot password?</Link>
                 </Stack>
-                <Button
+                <Button onClick={handleLogin}
                   bg={'blue.400'}
                   color={'white'}
                   _hover={{
