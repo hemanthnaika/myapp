@@ -21,7 +21,16 @@ import {
   
   export default function Singnup() {
     const [showPassword, setShowPassword] = useState(false);
+  const[email,SetEmail]=useState('')
+  const[password,SetPassword]=useState('')
+  const[firstName,setFirstName]=useState('')
+  const[lastName,SetlastName]=useState('')
   
+  const handleSignup = () =>{
+    console.log({  
+       email,firstName,lastName,password 
+      })
+  }
     return (
       <Flex
         minH={'100vh'}
@@ -47,28 +56,28 @@ import {
                 <Box>
                   <FormControl id="firstName" isRequired>
                     <FormLabel>First Name</FormLabel>
-                    <Input type="text" />
+                    <Input onChange={e=>{setFirstName(e.target.value)}} type="text" />
                   </FormControl>
                 </Box>
                 <Box>
                   <FormControl id="lastName">
                     <FormLabel>Last Name</FormLabel>
-                    <Input type="text" />
+                    <Input onChange={e=>{SetlastName(e.target.value)}} type="text" />
                   </FormControl>
                 </Box>
               </HStack>
               <FormControl id="email" isRequired>
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input onChange={e=>{SetEmail(e.target.value)}} type="email" />
               </FormControl>
               <FormControl id="password" isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
-                  <Input type={showPassword ? 'text' : 'password'} />
+                  <Input onChange={e=>{SetPassword(e.target.value)}} type={showPassword ? 'text' : 'password'} />
                   <InputRightElement h={'full'}>
                     <Button
                       variant={'ghost'}
-                      onClick={() =>
+                      onChange={() =>
                         setShowPassword((showPassword) => !showPassword)
                       }>
                       {showPassword ? <ViewIcon /> : <ViewOffIcon />}
@@ -77,7 +86,7 @@ import {
                 </InputGroup>
               </FormControl>
               <Stack spacing={10} pt={2}>
-                <Button
+                <Button onClick={handleSignup}
                   loadingText="Submitting"
                   size="lg"
                   bg={'blue.400'}
