@@ -30,6 +30,8 @@ import {
     console.log({  
        email,firstName,lastName,password 
       })
+      const users=JSON.parse(localStorage.getItem('users')) ?? []
+      localStorage.setItem('users',JSON.stringify([...users,{email,firstName,lastName,password}]))
   }
     return (
       <Flex
