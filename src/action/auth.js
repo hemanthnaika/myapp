@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken'
+import toast from 'react-hot-toast'
 
  export const loginUser = (email, password) => {
     // VERIFY EMAIL AND PASSWORD
@@ -8,12 +9,13 @@ import jwt from 'jsonwebtoken'
   if (user.password === password)
 {
     const token=jwt.sign({email:users.email},'SeCret')
+    toast.success("Login Success")
         return {
             type: "LOGIN_SUCCESS",
             payload: { token }
         }
     } else {
-   window.alert("incrrr")
+        toast.error("Login Failed")
         return {
             type: "LOGIN_FAILED",
             payload: { token: null }

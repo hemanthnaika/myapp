@@ -18,6 +18,7 @@ import {
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 //   ! Add the link to signup
   import { Link as loginlink  } from 'react-router-dom';
+import toast from 'react-hot-toast';
   
   export default function Singnup() {
     const [showPassword, setShowPassword] = useState(false);
@@ -32,6 +33,7 @@ import {
       })
       // ! If not in localStorage add empty array
       const users=JSON.parse(localStorage.getItem('users')) ?? []
+      toast.success("SIGNUP SUCCESS")
       localStorage.setItem('users',JSON.stringify([...users,{email,firstName,lastName,password}]))
   }
     return (
