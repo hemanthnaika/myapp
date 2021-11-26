@@ -14,12 +14,17 @@ import {
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { loginUser } from '../action/auth';
+  import { useDispatch } from 'react-redux';
+ 
   export default function Login() {
       const [email,setEmail]=useState('')
 const[password,setPassword]=useState('')
+const dispatch=useDispatch()
+
 const handleLogin=()=>{
     // Change of password and email
-    console.log(loginUser (email,password))
+    dispatch(loginUser (email,password))
+
 }
 
     return (

@@ -7,11 +7,17 @@ const authReducer = (state = initialState, action) => {
   console.log(state)
   switch (type) {
       case "LOGIN_SUCCESS":
-          return payload
+        //   return payload
+        return{
+            ...state,
+        auth:payload
+        }
+        
 
       case "LOGIN_FAILED":
           return {
-              ...payload
+            ...state,
+            auth:payload
           }
       case "LOGOUT":
           return {
