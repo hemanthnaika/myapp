@@ -23,7 +23,7 @@ const App = () => {
         <Route path='/login' element={<PrivateRoute child={<Login />} />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/shop' element={<Products />} />
-        <Route path='/shop/:productId' element={<Product />} />
+        <Route path='/product/:id' element={<Product />} />
         <Route path='/admin' element={<Admin />} />
         {/* <Route path='/Order' element={<Order />} /> */}
 
