@@ -60,7 +60,7 @@ export default function Navbar() {
                         <DesktopNav />
                     </Flex>
                 </Flex>
-
+{/* To add and dispel the sign and signup button */}
             {token ? null:
                 <Stack
                 flex={{ base: 1, md: 0 }}
@@ -186,7 +186,7 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
     {
         label: 'Shop',
-        to: '/Products'
+        to: '/shop'
     },
     {
         label: 'Shop for iPhone',
@@ -197,5 +197,9 @@ const NAV_ITEMS = [
         to: '/shop?q=watch'
 
     },
+    {
+        label: 'Admin',
+        to: '/admin'
 
+    },
 ];
