@@ -11,7 +11,8 @@ import {
     Heading,
     Text,
     useColorModeValue,
-  } from '@chakra-ui/react';
+  } 
+   from '@chakra-ui/react';
   import { useState } from 'react';
   import { loginUser } from '../../Action/auth';
   import { useDispatch } from 'react-redux';

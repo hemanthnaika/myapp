@@ -14,8 +14,9 @@ import Footer from './layout/Footer'
 import Admin from "./components/admin/Admin";
 const App = () => {
   return (
-    <div>
+    <div >
       {/* Add the Toaster in div  */}
+     
       <div><Toaster/></div>
       <Navbar />
       <Routes>
@@ -23,7 +24,8 @@ const App = () => {
         <Route path='/login' element={<PrivateRoute child={<Login />} />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/shop' element={<Products />} />
-        <Route path='/product/:id' element={<Product />} />
+        {/* <Route path='/shop/:productId' element={<Product />} /> */}
+        <Route path='/shop/:productId' element={<Product />} />
         <Route path='/admin' element={<Admin />} />
         {/* <Route path='/Order' element={<Order />} /> */}
 

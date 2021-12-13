@@ -1,3 +1,7 @@
+
+
+// ! Change the filed 
+
 import {
     Box,
     Center,
@@ -10,7 +14,7 @@ import {
 
 
 const ProductCard = ({ data }) => {
-    const { imageUrl } = data
+    const { imageUrl,productName,description,actualPrice,listingPrice,category,compatibleWith,color } = data
     console.log(data)
     return (
         <Box
@@ -55,18 +59,20 @@ const ProductCard = ({ data }) => {
                 />
             </Box>
             <Stack pt={10} align={'center'}>
-                <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
-                    Brand
+                <Text color={'gray.500'} fontSize={'x1'} textTransform={'uppercase'} >
+                <Heading fontSize={'2xl'} > {productName},
+                    {color}
+                    </Heading>
                 </Text>
                 <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
-                    Nice Chair, pink
+                 {}
                 </Heading>
                 <Stack direction={'row'} align={'center'}>
                     <Text color={'gray.700'} fontWeight={800} fontSize={'xl'}>
-                        $57
+                       {actualPrice}
                     </Text>
                     <Text textDecoration={'line-through'} color={'gray.600'}>
-                        $199
+                        {listingPrice}
                     </Text>
                 </Stack>
             </Stack>

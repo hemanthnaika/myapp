@@ -5,7 +5,7 @@ Product :
     description,
     actualPrice,
     listingPrice
-    category:"WHATVER THE CATEGORY IS",
+    category:"WHATEVER THE CATEGORY IS",
     compatibleWith,
     color
 */
@@ -21,7 +21,7 @@ const initialState = {
           // TODO use id 
           category: "Watch band",
           compatibleWith: "Apple Watch 38mm, 40mm, 41mm",
-          color: 'Pomegrenate',
+          color: '  Pomegrenate',
           imageUrl: 'https://cdn.shopify.com/s/files/1/0984/6842/products/Red-Fusion-38-40_1024x1024.jpg?v=1611006835',
           stock: 10,
       }, {
@@ -33,7 +33,7 @@ const initialState = {
           // TODO use id 
           category: "Watch band",
           compatibleWith: "Apple Watch 42mm, 44mm, 45mm",
-          color: 'Orange',
+          color: '  Orange',
           stock: 119,
           imageUrl: 'https://cdn.shopify.com/s/files/1/0984/6842/products/Pomegranate-40_1024x1024.jpg?v=1620410372',
       }
@@ -46,7 +46,7 @@ const initialState = {
           // TODO use id 
           category: "Watch band",
           compatibleWith: "Apple Watch 42mm, 44mm, 45mm",
-          color: 'Blue',
+          color: '  Blue',
           stock: 8,
 
           imageUrl: 'https://cdn.shopify.com/s/files/1/0984/6842/products/Sport_Loop-Midnight-40_1024x1024.jpg?v=1620410372'
@@ -62,7 +62,7 @@ const initialState = {
           // TODO use id 
           category: "iPhone Case",
           compatibleWith: "iPhone 12",
-          color: 'Black',
+          color: '  Orange',
           imageUrl: 'https://cdn.shopify.com/s/files/1/0984/6842/products/12-Sunflower_1024x1024.jpg?v=1630739597'
       }
       , {
@@ -75,7 +75,7 @@ const initialState = {
           // TODO use id 
           category: "iPhone Case",
           compatibleWith: "iPhone 12",
-          color: 'Orange',
+          color: '  Pink',
           imageUrl: 'https://cdn.shopify.com/s/files/1/0984/6842/products/12-Mystery-Flame_1024x1024.jpg?v=1606412986'
       }
   ]
