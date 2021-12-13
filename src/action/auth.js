@@ -1,14 +1,16 @@
+
 import jwt from 'jsonwebtoken'
-import toast from 'react-hot-toast'
 import axios from 'axios'
+import { toast } from 'react-hot-toast'
+
 
 
 export const loginUser = (email, password) => async (dispatch) => {
 
     try {
-        const base_URL='https://hemanth-e-comerce-api.herokuapp.com'
+        const base_Url = 'https://hemanth-e-comerce-api.herokuapp.com'
 
-        const res = await axios.post(`${base_URL}/api/v1/auth/login`, {
+        const res = await axios.post(`${base_Url}/api/v1/auth/login`, {
             email, password
         })
         const { token, message } = res.data
@@ -20,10 +22,41 @@ export const loginUser = (email, password) => async (dispatch) => {
                 payload: { token }
             })
         } else {
-            toast.error('LOGIN_FAILED')
+            toast.error(message)
             dispatch({
                 type: "LOGIN_FAILED",
                 payload: { token: null }
+            })
+        }
+    } catch (error) {
+        console.log(error.message)
+        toast.error(error.message)
+    }
+};
+
+
+export const signupUser = (email, firstName, lastName, password) => async (dispatch) => {
+
+    try {
+        const base_Url = 'https://hemanth-e-comerce-api.herokuapp.com'
+
+        const res = await axios.post(`${base_Url}/api/v1/auth/signup`, {
+            email, firstName, lastName, password
+        })
+        const { user } = res.data
+        if (user) {
+            toast.success('Signup Success')
+            dispatch({
+                type: "SIGNUP_SUCCESS",
+                payload: {
+                    signup: true
+                }
+            })
+        } else {
+            toast.error('Signup Failed')
+            dispatch({
+                type: "SIGNUP_FAILED",
+                payload: { signup: false }
             })
         }
     } catch (error) {
