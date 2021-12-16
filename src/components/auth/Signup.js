@@ -18,7 +18,7 @@ import {
 import { useEffect, useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { Link as routerLink, useNavigate } from 'react-router-dom'
-import { signupUser } from '../../Action/auth';
+import { signupUser } from '../../action/auth';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function Signup() {

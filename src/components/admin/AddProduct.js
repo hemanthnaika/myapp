@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux'
-import { addProduct } from '../../Action/product'
+import { addProduct } from '../../action/product'
 
 
 const AddProduct = () => {

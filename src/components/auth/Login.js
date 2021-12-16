@@ -14,7 +14,7 @@ import {
 
 } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
-import { loginUser } from '../../Action/auth';
+import { loginUser } from '../../action/auth';
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate } from 'react-router';
 

@@ -11,7 +11,7 @@ import {
   Stack
 } from "@chakra-ui/react"
 import { useSelector } from "react-redux";
-import { deleteProduct } from '../../Action/product'
+import { deleteProduct } from '../../action/product'
 import { useDispatch } from 'react-redux'
 
 
