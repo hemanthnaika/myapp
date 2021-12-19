@@ -33,7 +33,7 @@ export default function Home() {
                         </Text>
                         <br />{' '}
                         <Text color={'red.400'} as={'span'}>
-                            That you'll love ❤️
+                            That you'll love 
                         </Text>{' '}
                     </Heading>
                     <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
