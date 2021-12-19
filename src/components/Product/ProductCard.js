@@ -1,7 +1,4 @@
 
-
-// ! Change the filed 
-
 import {
     Box,
     Center,
@@ -14,8 +11,7 @@ import {
 
 
 const ProductCard = ({ data }) => {
-    const { imageUrl,productName,description,actualPrice,listingPrice,category,compatibleWith,color } = data
-    console.log(data)
+    const { imageUrl, actualPrice, listingPrice, productName, color } = data
     return (
         <Box
             role={'group'}
@@ -59,20 +55,18 @@ const ProductCard = ({ data }) => {
                 />
             </Box>
             <Stack pt={10} align={'center'}>
-                <Text color={'gray.500'} fontSize={'x1'} textTransform={'uppercase'} >
-                <Heading fontSize={'2xl'} > {productName},
-                    {color}
-                    </Heading>
+                <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
+                    +plus
                 </Text>
                 <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
-                 {}
+                    {`${productName}, ${color}`}
                 </Heading>
                 <Stack direction={'row'} align={'center'}>
                     <Text color={'gray.700'} fontWeight={800} fontSize={'xl'}>
-                       {actualPrice}
+                        {listingPrice}
                     </Text>
                     <Text textDecoration={'line-through'} color={'gray.600'}>
-                        {listingPrice}
+                        {actualPrice}
                     </Text>
                 </Stack>
             </Stack>

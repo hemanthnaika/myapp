@@ -1,3 +1,4 @@
+
 import {
     Button,
     Flex,
@@ -6,12 +7,11 @@ import {
     Stack,
     Text,
     useBreakpointValue,
-    Box
 } from '@chakra-ui/react';
-import { Link, Link as routerLink, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
 export default function Home() {
     return (
-      
         <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
             <Flex p={8} flex={1} align={'center'} justify={'center'}>
                 <Stack spacing={6} w={'full'} maxW={'lg'}>
@@ -29,7 +29,7 @@ export default function Home() {
                                 bg: 'blue.400',
                                 zIndex: -1,
                             }}>
-                              Accessories
+                            Accessories
                         </Text>
                         <br />{' '}
                         <Text color={'red.400'} as={'span'}>
@@ -42,17 +42,17 @@ export default function Home() {
                     </Text>
                     <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
                         <Button
-                          as={Link}
-                          to={'/shop'}
+                            as={Link}
+                            to={'/shop'}
                             rounded={'full'}
-                            bg={'blue.400'}
+                            bg={'red.400'}
                             color={'white'}
                             _hover={{
                                 bg: 'blue.500',
-                            }} >
-                      Shop 
+                            }}>
+                            Shop
                         </Button>
-                        <Button rounded={'full'} bg={'red.400'}>About Us</Button>
+                        <Button rounded={'full'}>About Us</Button>
                     </Stack>
                 </Stack>
             </Flex>
@@ -68,5 +68,3 @@ export default function Home() {
         </Stack>
     );
 }
-
-                 

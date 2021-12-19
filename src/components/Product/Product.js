@@ -1,5 +1,4 @@
 
-
 import {
     Container,
     SimpleGrid,
@@ -13,6 +12,7 @@ import {
     useColorModeValue,
     Button,
 } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 import {
     IoAnalyticsSharp,
     IoColorFilterOutline,
@@ -21,12 +21,9 @@ import {
     IoSearchSharp,
     IoShieldCheckmarkOutline,
 } from 'react-icons/io5';
-import { ReactElement, useState } from 'react';
-import Values from '../Values';
-import Details from './Details';
-import { useParams } from 'react-router';
-import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router';
+import Values from '../Values';
 
 
 const Feature = ({ text, icon, iconBg }) => {
@@ -45,19 +42,18 @@ const Feature = ({ text, icon, iconBg }) => {
         </Stack>
     );
 };
-// !Change of product details
+
 export default function Product() {
     const [selectedProduct, setSelectedproduct] = useState(null)
-     const { products } = useSelector(state => state.products)
-     const { productId } = useParams()
+    const { products } = useSelector(state => state.products)
+    const { productId } = useParams()
 
-      const fetchProduct = (productId) => {
-          const product = products.find(product => product.id == productId)
-         setSelectedproduct(product)
-     }
+    const fetchProduct = (productId) => {
+        const product = products.find(product => product.id == productId)
+        setSelectedproduct(product)
+    }
     useEffect(() => {
-
-         fetchProduct(productId)
+        fetchProduct(productId)
     }, [])
 
     console.log(selectedProduct)
@@ -69,7 +65,7 @@ export default function Product() {
                         rounded={'md'}
                         alt={'feature image'}
                         src={
-                          selectedProduct&& selectedProduct.imageUrl
+                            selectedProduct && selectedProduct.imageUrl
                         }
                         objectFit={'cover'}
                     />
@@ -84,11 +80,11 @@ export default function Product() {
                         p={2}
                         alignSelf={'flex-start'}
                         rounded={'md'}>
-                        {selectedProduct && selectedProduct.productName}
+                        {selectedProduct && selectedProduct.category}
                     </Text>
-                    <Heading>{selectedProduct && selectedProduct.productName}</Heading>
+                    <Heading>{selectedProduct && selectedProduct.name}</Heading>
                     <Text color={'gray.500'} fontSize={'lg'}>
-                    {selectedProduct && selectedProduct.description}
+                        {selectedProduct && selectedProduct.description}
                     </Text>
                     <Stack
                         spacing={4}
@@ -111,8 +107,7 @@ export default function Product() {
                                 <Icon as={IoColorFilterOutline} color={'purple.500'} w={5} h={5} />
                             }
                             iconBg={useColorModeValue('purple.100', 'purple.900')}
-                            text={`Color : ${selectedProduct && selectedProduct.color} `}
-                    
+                            text={`Color : ${selectedProduct && selectedProduct.color}`}
                         />
                         <Feature
                             icon={<Icon as={IoShieldCheckmarkOutline} color={'green.500'} w={5} h={5} />}
